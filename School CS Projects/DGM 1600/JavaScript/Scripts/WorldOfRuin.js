@@ -1,11 +1,35 @@
 var outcome;
 
+var allMessages = [
+    "The year is 2055 you Wake from a deep cryogenic slumber to find the world is a wasteland.",
+    "You slowly step out of you cryo chamber and have a look around"
+];
 
-window.alert("The year is 2055 you Wake from a deep cryogenic slumber to find the world is a wasteland");
+var msgCounter = 0;
 
-window.alert("You slowly step out of you cryo chamber and have a look around");
+$(document).ready(function () {
+    $("h2").text(allMessages[msgCounter]);
+});
 
-var startingScenarios = ["You are find yourself in an old rusty millitary building", "You find yourself in a ruined building ", "You find yourself in a partialy colapsed subway line"];
+$('#nextButton').on('click', function() {
+    if (msgCounter < allMessages.length - 1) {
+      msgCounter++;
+     $("h2").text(allMessages[msgCounter]);  
+    }
+});
+
+$('#prevButton').on('click', function() {
+    if (msgCounter > 0) {
+        msgCounter--;
+        $("h2").text(allMessages[msgCounter]);
+    }
+});
+
+//window.alert("The year is 2055 you Wake from a deep cryogenic slumber to find the world is a wasteland");
+
+//window.alert("You slowly step out of you cryo chamber and have a look around");
+
+/*var startingScenarios = ["You are find yourself in an old rusty millitary building", "You find yourself in a ruined building ", "You find yourself in a partialy colapsed subway line"];
 
 function randomNumber(range) {
   "use strict";
@@ -76,7 +100,7 @@ window.alert("As you grab your gear you hear a man yell in the distance, I FOUND
 
 window.alert("As the two men make their way too you you hear one shout JUMP HIM!");
 
-var choice = window.prompt("Unsure of their intentions your decide to (Attack, Flee)").toLowerCase();
+var choice = window.prompt("Unsure of their intentions your decide to (Attack, Flee)");
 
 if (!choice) {
   window.alert("Overcome with fear you accept your fate as the two men beat you to death");
@@ -119,5 +143,5 @@ if (outcome === "win") {
   window.alert("YOU LOSE!");
 }
 
-
+*/
 
